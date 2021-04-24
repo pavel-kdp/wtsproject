@@ -1,0 +1,320 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+
+void main() {
+  runApp(MaterialApp(
+    title: 'Navigation',
+    home: HomePg(),
+  ));
+}
+
+class AllProducts extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Все товары', style: TextStyle(fontSize: 30.0)),
+        centerTitle: false,
+        backgroundColor: Colors.black,
+      ),
+      body: ListView(
+        children: <Widget> [
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/b17/b17359516e1f46912e57f3ba458c5c49.jpg'),
+            title: Text('Труборасширитель VALUE VST-22'),
+          ),
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/b17/b17359516e1f46912e57f3ba458c5c49.jpg'),
+            title: Text('Риммер NB1000 (аналог VALUE VTT-5)'),
+          ),
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/ba5/ba5812b44d954153fb827c1e136c24ee.jpg'),
+            title: Text('Риммер (Шабер) VALUE - Shine Year CH-209A'),
+          ),
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/a7d/a7d69472c556982d8f9d3ea25b0b0457.jpg'),
+            title: Text('Комплект шлангов VRP-С-RYB R-410A (150 см) с вентилями'),
+          ),
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/9bd/9bd6f847005ac996eeb5ffe1803a1df3.jpg'),
+            title: Text('Горелка PROVIDUS с пьезоподжигом GA200'),
+          ),
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/07f/07fb81eac8c4c4aefa9242cffd7ce3ac.jpg'),
+            title: Text('Электронный термометр Outest Y-B26-A02-102'),
+          ),
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/faf/faf1ac13abe516ef0d8e43a02fde46ee.jpg'),
+            title: Text('Манометр Becool BCOH-N'),
+          ),
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/939/939134fb012cb22b78bfe606a6c5a7dc.jpg'),
+            title: Text('Масло синтетическое Suniso SL 100 1Л'),
+          ),
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/b17/b17359516e1f46912e57f3ba458c5c49.jpg'),
+            title: Text('Труборасширитель VALUE VST-23'),
+          ),
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/c1c/c1c93fb740e496aba817eb16932c06d5.jpg'),
+            title: Text('Трубогиб пружинный CT-102-06'),
+          ),
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/b17/b17359516e1f46912e57f3ba458c5c49.jpg'),
+            title: Text('Труборасширитель VALUE VST-22'),
+          ),
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/c1c/c1c93fb740e496aba817eb16932c06d5.jpg'),
+            title: Text('Трубогиб пружинный CT-102-08'),
+          ),
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/b17/b17359516e1f46912e57f3ba458c5c49.jpg'),
+            title: Text('Труборасширитель VALUE VST-22'),
+          ),
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/c96/c960f1412eb9e4bad9ebf3359dbab655.jpg'),
+            title: Text('Трубогиб пружинный CT-102-10'),
+          ),
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/338/3385353cb5dc43f261eff12c7051ade5.jpg'),
+            title: Text('Трубогиб пружинный CT-102-12'),
+          ),
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/acc/accdd89cb991a64ef847e13110650dea.jpg'),
+            title: Text('Трубогиб DSZH WK-1012'),
+          )
+        ],
+      ),
+      //floatingActionButton: ElevatedButton(child: Text('Add'), onPressed: () {}),
+    );
+  }
+}
+
+class categories extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Категории', style: TextStyle(fontSize: 30.0)),
+        centerTitle: false,
+        backgroundColor: Colors.black,
+      ),
+        body: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(primary: Colors.black),
+                  child: Text('Труборасширители', style: TextStyle(fontSize: 30.0)), onPressed: () {
+                    Navigator.push(
+                      context,
+                  MaterialPageRoute(builder: (context) => trubrash()),
+                );
+              })
+              ),
+              Container(
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(primary: Colors.black),
+                      child: Text('Трубогиб', style: TextStyle(fontSize: 30.0)), onPressed: () {
+                        Navigator.push(
+                          context,
+                      MaterialPageRoute(builder: (context) => trubgib()),
+                    );
+                  })
+              ),
+              Container(
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(primary: Colors.black),
+                      child: Text('Риммеры', style: TextStyle(fontSize: 30.0)), onPressed: () {
+                        Navigator.push(
+                          context,
+                      MaterialPageRoute(builder: (context) => rims()),
+                    );
+                  })
+              ),
+              Container(
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(primary: Colors.black),
+                      child: Text('Другое', style: TextStyle(fontSize: 30.0)), onPressed: () {
+                        Navigator.push(
+                          context,
+                      MaterialPageRoute(builder: (context) => other()),
+                    );
+                  })
+              )
+            ],
+          ),
+
+        )
+      );
+  }
+}
+
+class HomePg extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Интернет магазин', style: TextStyle(fontSize: 30.0)),
+        centerTitle: true,
+        backgroundColor: Colors.black,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(padding: EdgeInsets.all(10.0),child: ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: Colors.black),
+                child: Text('Все товары', style: TextStyle(fontSize: 50.0)), onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => AllProducts()),
+              );
+            })
+            ),
+            Container(padding: EdgeInsets.all(10.0),
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(primary: Colors.black),
+                    child: Text('Категории', style: TextStyle(fontSize: 50.0)), onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => categories()),
+                  );
+                })
+            ),
+          ],
+        ),
+
+      )
+    );
+  }
+}
+
+class trubrash extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Труборасширители', style: TextStyle(fontSize: 30.0)),
+        centerTitle: false,
+        backgroundColor: Colors.black,
+      ),
+      body: ListView(
+        children: <Widget> [
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/b17/b17359516e1f46912e57f3ba458c5c49.jpg'),
+            title: Text('Труборасширитель VALUE VST-22'),
+          ),
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/b17/b17359516e1f46912e57f3ba458c5c49.jpg'),
+            title: Text('Труборасширитель VALUE VST-23'),
+          ),
+        ],
+      ),
+      //floatingActionButton: ElevatedButton(child: Text('Add'), onPressed: () {}),
+    );
+  }
+}
+
+class trubgib extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Трубогибы', style: TextStyle(fontSize: 30.0)),
+        centerTitle: false,
+        backgroundColor: Colors.black,
+      ),
+      body: ListView(
+        children: <Widget> [
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/c1c/c1c93fb740e496aba817eb16932c06d5.jpg'),
+            title: Text('Трубогиб пружинный CT-102-06'),
+          ),
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/c1c/c1c93fb740e496aba817eb16932c06d5.jpg'),
+            title: Text('Трубогиб пружинный CT-102-08'),
+          ),
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/c96/c960f1412eb9e4bad9ebf3359dbab655.jpg'),
+            title: Text('Трубогиб пружинный CT-102-10'),
+          ),
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/338/3385353cb5dc43f261eff12c7051ade5.jpg'),
+            title: Text('Трубогиб пружинный CT-102-12'),
+          ),
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/acc/accdd89cb991a64ef847e13110650dea.jpg'),
+            title: Text('Трубогиб DSZH WK-1012'),
+          )
+        ],
+      ),
+      //floatingActionButton: ElevatedButton(child: Text('Add'), onPressed: () {}),
+    );
+  }
+}
+
+class rims extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Риммеры', style: TextStyle(fontSize: 30.0)),
+        centerTitle: false,
+        backgroundColor: Colors.black,
+      ),
+      body: ListView(
+        children: <Widget> [
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/b17/b17359516e1f46912e57f3ba458c5c49.jpg'),
+            title: Text('Риммер NB1000 (аналог VALUE VTT-5)'),
+          ),
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/ba5/ba5812b44d954153fb827c1e136c24ee.jpg'),
+            title: Text('Риммер (Шабер) VALUE - Shine Year CH-209A'),
+          ),
+        ],
+      ),
+      //floatingActionButton: ElevatedButton(child: Text('Add'), onPressed: () {}),
+    );
+  }
+}
+
+class other extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Другое', style: TextStyle(fontSize: 30.0)),
+        centerTitle: false,
+        backgroundColor: Colors.black,
+      ),
+      body: ListView(
+        children: <Widget> [
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/a7d/a7d69472c556982d8f9d3ea25b0b0457.jpg'),
+            title: Text('Комплект шлангов VRP-С-RYB R-410A (150 см) с вентилями'),
+          ),
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/9bd/9bd6f847005ac996eeb5ffe1803a1df3.jpg'),
+            title: Text('Горелка PROVIDUS с пьезоподжигом GA200'),
+          ),
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/07f/07fb81eac8c4c4aefa9242cffd7ce3ac.jpg'),
+            title: Text('Электронный термометр Outest Y-B26-A02-102'),
+          ),
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/faf/faf1ac13abe516ef0d8e43a02fde46ee.jpg'),
+            title: Text('Манометр Becool BCOH-N'),
+          ),
+          ListTile(
+            leading: Image.network('https://www.klimat4you.ru/upload/iblock/939/939134fb012cb22b78bfe606a6c5a7dc.jpg'),
+            title: Text('Масло синтетическое Suniso SL 100 1Л'),
+          ),
+        ],
+      ),
+      //floatingActionButton: ElevatedButton(child: Text('Add'), onPressed: () {}),
+    );
+  }
+}
